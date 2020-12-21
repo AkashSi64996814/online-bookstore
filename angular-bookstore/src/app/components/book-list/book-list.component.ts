@@ -31,7 +31,7 @@ export class BookListComponent implements OnInit {
     }else{
       this.currentCategoryId = 1;
     }
-
+    console.log("Currency Id :",this.currentCategoryId)
     this._bookServive.getBooks(this.currentCategoryId).subscribe(
       data => {
         this.books = data
