@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-bookstore": {
+    "angular-bk-store": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-bookstore",
+            "outputPath": "dist/angular-bk-store",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,10 +26,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -65,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-bookstore:build"
+            "browserTarget": "angular-bk-store:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-bookstore:build:production"
+              "browserTarget": "angular-bk-store:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-bookstore:build"
+            "browserTarget": "angular-bk-store:build"
           }
         },
         "test": {
@@ -113,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-bookstore:serve"
+            "devServerTarget": "angular-bk-store:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-bookstore:serve:production"
+              "devServerTarget": "angular-bk-store:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-bookstore",
+  "defaultProject": "angular-bk-store",
   "cli": {
-    "analytics": "93c493bd-ce59-4323-9723-ce5b99adb9fc"
+    "analytics": "3172a7b6-b2ef-4486-a577-fc94f9dde7c8"
   }
 }

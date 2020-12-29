@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Book} from 'src/app/common/book';
 import { BookService } from 'src/app/services/book.service';
 import { ActivatedRoute } from '@angular/router';
+// import {JwPaginationComponent} from 'jw-angular-pagination';
 
 
 @Component({
@@ -15,6 +16,8 @@ export class BookListComponent implements OnInit {
   books: Book[]
   currentCategoryId: number;
   searchMode: boolean;
+  pageOfItems: Array<Book>;
+  pageSize: number = 6;
   
   constructor(private _bookServive : BookService, private _activatedRoute : ActivatedRoute) { }
 
@@ -22,6 +25,12 @@ export class BookListComponent implements OnInit {
     this._activatedRoute.paramMap.subscribe(()=>{
       this.listBooks();
     })
+  }
+
+  pageClick(pageOfItems: Array<Book>){
+    //Update the current page of items
+    console.log("Page of items :", pageOfItems)
+    this.pageOfItems = pageOfItems;
   }
 
   listBooks(){
@@ -57,6 +66,11 @@ export class BookListComponent implements OnInit {
         this.books = data;
       }
     )
+  }
+
+  updatePageSize(pageSize: number){
+    this.pageSize = pageSize;
+    this.listBooks();
   }
 
 }

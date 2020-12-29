@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import {HttpClientModule} from '@angular/common/http';
 import {BookService} from './services/book.service';
 import {RouterModule, Routes} from '@angular/router';
@@ -10,6 +11,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { BookCategoryComponent } from './components/book-category/book-category.component';
 import { SearchComponent } from './components/search/search.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
+import {JwPaginationModule} from 'jw-angular-pagination';
 
 const routes: Routes = [
   {path: 'books', component: BookListComponent},
@@ -27,12 +29,13 @@ const routes: Routes = [
     PageNotFoundComponent,
     BookCategoryComponent,
     SearchComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
   ],
   imports: [
     BrowserModule,
+    JwPaginationModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
