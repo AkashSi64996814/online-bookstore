@@ -13,7 +13,8 @@ import { SearchComponent } from './components/search/search.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import {JwPaginationModule} from 'jw-angular-pagination';
 import {NgbPaginationModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { CartStatusComponent } from './components/cart-status/cart-status.component'
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 const routes: Routes = [
   {path: 'books', component: BookListComponent},
@@ -41,6 +42,7 @@ const routes: Routes = [
     NgbPaginationModule,
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     NgbModule,
+    NgxSpinnerModule
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
