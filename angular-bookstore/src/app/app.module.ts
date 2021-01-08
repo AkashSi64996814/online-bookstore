@@ -16,6 +16,8 @@ import {NgbPaginationModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+
 
 const routes: Routes = [
   {path: 'cart-details', component: CartDetailsComponent},
@@ -45,7 +47,8 @@ const routes: Routes = [
     NgbPaginationModule,
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     NgbModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
